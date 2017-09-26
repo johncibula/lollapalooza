@@ -16,7 +16,7 @@ public class Song
   }
 
   public Song addSpecialEffect(SpecialEffect effect) {
-    effects.add(effect);
+    ControlBoard.getInstance().addEffect(effects,effect);
     return this;
   }
 

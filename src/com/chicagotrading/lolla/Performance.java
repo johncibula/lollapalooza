@@ -12,6 +12,10 @@ public class Performance
 
   private List<Song> songs = new ArrayList();
 
+  public List<Song> getSongs() {
+    return songs;
+  }
+
   public Performance(EventTime eventTime, Band band, Stage stage) {
     this.eventTime = eventTime;
     this.band = band;
@@ -20,7 +24,9 @@ public class Performance
 
   public Song newSong(String title, Duration duration) {
     Song song = new Song(title,duration);
-    songs.add(song);
+    ControlBoard.getInstance().addSong(songs,song);
     return song;
   }
+
+
 }
